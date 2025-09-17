@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Single Layer Tokenizers - Anonymous Author(s)">
+  <meta name="description" content="This research presents a review of approaches in single layer tokenizers for full band general audio.">
+  <meta name="keywords" content="single layer tokenization, neural codecs, generative audio, machine learning, AI">
+  <meta name="author" content="Anonymous Author(s)">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sony AI">
+  <meta property="og:title" content="How far are we from a Full-band Single-layer Tokenizer for General Audio?">
+  <meta property="og:description" content="This research presents a review of approaches in single layer tokenizers for full band general audio.">
+  <meta property="og:url" content="https://github.io/singlelayertokenizer_demo/">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="How far are we from a Full-band Single-layer Tokenizer for General Audio?">
+  <meta name="citation_author" content="Anonymous Author(s)">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="IEEE ICASSP">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <title>How far are we from a Full-band Single-layer Tokenizer for General Audio? - Christopher Ick, Zhi Zhong, Koichi Saito, Woosung Choi, Yuki Mitsufuji</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/icon.jpg">
+  <link rel="apple-touch-icon" href="static/images/icon.jpg">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">How far are we from a Full-band Single-layer Tokenizer for General Audio?</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+              Anonymous Author(s)
+              </span>
+              </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Anonymous Institution(s)</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Language modeling (LM) sparked success in Natural language Processing. 
+            Neural audio tokenizers are deep neural networks that compress audio signals into discrete "tokens", a compact latent representation that enables LM for audio, unifying the modeling approaches across different modalities.
+            Consequently, audio tokenization has gained increased attention in industry and research communities, particularly low-bitrate tokenizers that operate in a sufficiently low bitrate such that they are compatible with modern approaches in LM.
+            We evaluate current state of the art approaches in single-layer audio tokenizers in their ability to encode full-band speech and general audio.
+            We adapt these models to encode 48kHz audio, and train them on speech and general audio.
+            We provide a comprehensive evaluation across a diverse set of signal, perceptual, and generative metrics, evaluating them compared to similar multi-codebook codecs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Teaser -->
+<section class="section hero">
+  <div class="container is-full-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-max-desktop is-full-mobile">
+        <h2 id="section_1" class="title is-3">Tokenizer Architecture</h2>
+        <div class="table-container">
+          <table class="table" align="center" style="table-layout: fixed; word-break: break-word; width: 100%;">
+            <thead>
+              
+            </thead>
+             <thead>
+              <tr>
+            <th> Fig. 1: A generalized visualization of audio tokenizer architecture. The transform f(x) &rarr; X is either signal-processing-based or data-driven, mapping audio waveforms x into a time-frequency (spectral) representation X.</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="static/images/EncoderDecoder.png" alt="Audio Tokenizer Architecture" style="max-width:100%; height:auto; display:block; margin:auto;">
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        <h2 id="section_1" class="title is-3">Voice Samples</h2>
+        <h3 class="title is-4" style="margin-top:2em;">Baselines</h3>
+        <div class="table-container">
+          <table class="table" align="left" style="table-layout: fixed; word-break: break-word; width: 100%;">
+            <tbody>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Ground Truth</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/gt/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/gt/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/gt/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/gt/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/gt/example_4.wav"></audio></td>
+              </tr>
+              
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Descript Audio Codec - 44k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">EnCodec - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">SpectroStream - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt/example_4.wav"></audio></td>
+              </tr>
+            </tbody>
+          </table>
+
+        <h3 class="title is-4" style="margin-top:2em;">Single-Layer Tokenizers</h3>
+        <div class="table-container">
+          <table class="table" align="left" style="table-layout: fixed; word-break: break-word; width: 100%;">
+            <tbody>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Descript Audio Codec - 48k (single codebook)</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac_sc/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac_sc/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac_sc/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac_sc/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/dac_sc/example_4.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">EnCodec - 48k (single codebook)</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec_sc/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec_sc/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec_sc/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec_sc/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/encodec_sc/example_4.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">SpectroStream - 48k (single codebook)</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt_sc/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt_sc/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt_sc/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt_sc/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/magenta_rt_sc/example_4.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">WavTokenizer - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavtokenizer/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavtokenizer/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavtokenizer/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavtokenizer/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavtokenizer/example_4.wav"></audio></td>
+              </tr>
+              
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">BigCodec - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/bigcodec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/bigcodec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/bigcodec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/bigcodec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/bigcodec/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">StableCodec - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/stablecodec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/stablecodec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/stablecodec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/stablecodec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/stablecodec/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">XCodec2 - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/xc2/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/xc2/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/xc2/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/xc2/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/xc2/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">TS3Codec - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/ts3codec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/ts3codec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/ts3codec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/ts3codec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/ts3codec/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Wav-Wav</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavwav/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavwav/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavwav/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavwav/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/wavwav/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Spec-Spec</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/specspec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/specspec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/specspec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/specspec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/speech/specspec/example_4.wav"></audio></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="section_1" class="title is-3">General Audio Samples</h2>
+        <h3 class="title is-4" style="margin-top:2em;">Baselines</h3>
+        <div class="table-container">
+          <table class="table" align="left" style="table-layout: fixed; word-break: break-word; width: 100%;">
+            <tbody>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Ground Truth</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/gt/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/gt/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/gt/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/gt/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/gt/example_4.wav"></audio></td>
+              </tr>
+              
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Descript Audio Codec - 44k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">EnCodec - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">SpectroStream - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">SoundCTM-VAE</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/cte-vae/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/cte-vae/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/cte-vae/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/cte-vae/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/cte-vae/example_4.wav"></audio></td>
+              </tr>
+            </tbody>
+          </table>
+
+        <h3 class="title is-4" style="margin-top:2em;">Single-Layer Tokenizers</h3>
+        <div class="table-container">
+          <table class="table" align="left" style="table-layout: fixed; word-break: break-word; width: 100%;">
+            <tbody>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Descript Audio Codec - 48k (single codebook)</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac_sc/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac_sc/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac_sc/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac_sc/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/dac_sc/example_4.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">EnCodec - 48k (single codebook)</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec_sc/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec_sc/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec_sc/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec_sc/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/encodec_sc/example_4.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">SpectroStream - 48k (single codebook)</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt_sc/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt_sc/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt_sc/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt_sc/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/magenta_rt_sc/example_4.wav"></audio></td>
+              </tr>
+              
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">BigCodec - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/bigcodec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/bigcodec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/bigcodec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/bigcodec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/bigcodec/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">StableCodec - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/stablecodec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/stablecodec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/stablecodec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/stablecodec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/stablecodec/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">XCodec2 - 48k</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/xc2/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/xc2/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/xc2/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/xc2/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/xc2/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Wav-Wav</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/wavwav/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/wavwav/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/wavwav/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/wavwav/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/wavwav/example_4.wav"></audio></td>
+              </tr>
+              <tr>
+                <th style="text-align: left; vertical-align: middle;">Spec-Spec</th>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/specspec/example_0.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/specspec/example_1.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/specspec/example_2.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/specspec/example_3.wav"></audio></td>
+                <td style="width:20%;"><audio controls style="width:100%;" src="static/audio/general_audio/specspec/example_4.wav"></audio></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>TBA</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+<!--References citation -->
+  <section class="section" id="Reference Implmentations">
+    <div class="container is-max-desktop content">
+      <div class="references-header">
+        <h2 class="title">Reference Implementations</h2>
+      </div>
+      <ol>
+        <li>
+          <strong>Descript Audio Codec:</strong> <a href="https://github.com/descriptinc/descript-audio-codec" target="_blank">https://github.com/descriptinc/descript-audio-codec</a>
+        </li>
+        <li>
+          <strong>EnCodec:</strong> <a href="https://github.com/facebookresearch/encodec" target="_blank">https://github.com/facebookresearch/encodec</a>
+        </li>
+        <li>
+          <strong>SpectroStream:</strong> <a href="https://github.com/magenta/magenta-realtime" target="_blank">https://github.com/magenta/magenta-realtime</a>
+        </li>
+        <li>
+          <strong>WavTokenizer:</strong> <a href="https://github.com/jishengpeng/WavTokenizer" target="_blank">https://github.com/jishengpeng/WavTokenizer</a>
+        </li>
+        <li>
+          <strong>BigCodec:</strong> <a href="https://github.com/Aria-K-Alethia/BigCodec" target="_blank">https://github.com/Aria-K-Alethia/BigCodec</a>
+        </li>
+        <li>
+          <strong>StableCodec:</strong> <a href="https://github.com/Stability-AI/stable-audio-tools" target="_blank">https://github.com/Stability-AI/stable-audio-tools</a>
+        </li>
+        <li>
+          <strong>XCodec2:</strong> <a href="https://github.com/zhenye234/X-Codec-2.0" target="_blank">https://github.com/zhenye234/X-Codec-2.0</a>
+        </li>
+        <li>
+          <strong>TS3Codec</strong>: No official implementation available see <a href="https://github.com/Ereboas/MagiCodec/blob/main/roformer.py" target="_blank">MagiCodec implementation</a>
+        </li>
+        <li>
+          <strong>SoundCTM-VAE:</strong> <a href="https://github.com/sony/soundctm" target="_blank">https://github.com/sony/soundctm</a>
+        </li>
+      </ol>
+
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
