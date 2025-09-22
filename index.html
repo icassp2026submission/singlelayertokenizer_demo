@@ -130,12 +130,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Language modeling (LM) sparked success in Natural language Processing. 
-            Neural audio tokenizers are deep neural networks that compress audio signals into discrete "tokens", a compact latent representation that enables LM for audio, unifying the modeling approaches across different modalities.
-            Consequently, audio tokenization has gained increased attention in industry and research communities, particularly low-bitrate tokenizers that operate in a sufficiently low bitrate such that they are compatible with modern approaches in LM.
-            We evaluate current state of the art approaches in single-layer audio tokenizers in their ability to encode full-band speech and general audio.
-            We adapt these models to encode 48kHz audio, and train them on speech and general audio.
-            We provide a comprehensive evaluation across a diverse set of signal, perceptual, and generative metrics, evaluating them compared to similar multi-codebook codecs.
+            Audio Language Modeling (LM) has recently shown accelerated progress in various audio generation tasks. 
+            Audio tokenizers are neural networks that compress audio signals into discrete tokens that enables LM for audio, which have thus gained increased attention from industry and research communities.
+            A full-band (48kHz) tokenizer is expected to reproduce realistic timbres of versatile audio sources in real world. 
+            Meanwhile, single-layer tokenizers have been reported to have codebook structures more compatible with audio LMs. 
+            However, most prior works focused on either full-band tokenization with multiple codebooks or limited-band tokenization with a single codebook, a trend followed by recent surveys and evaluation research on audio tokenization.
+            In this paper, we adapted or proposed seven representative single-layer tokenizers and train them from-scratch on general audio at full-band. 
+            Comprehensive evaluations are done with a set of signal matching, perceptual, and distribution matching metrics.
+            In our benchmark, we found some of our modified and proposed models competitive to strong existing models that use multi-layer quantizers or even a continuous bottleneck.
           </p>
         </div>
       </div>
